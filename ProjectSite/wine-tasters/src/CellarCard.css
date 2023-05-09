@@ -1,5 +1,8 @@
 .cellarCard {
     text-decoration: none;
+    display: inline-block;
+    width: 210px;
+    height: 210px;
 }
 
 .cardFrame {
@@ -22,19 +25,32 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     border-radius: 15px;
     margin-top: 45px;
     min-height: 120px;
+    margin-bottom: 45px;
+    display: flex;
+    justify-content: center;
 }
 
 .winePhoto {
-    height: 80%;
-    justify-content: center;
-    min-width: 100px;
+    min-height: 100px;
+    font-size: 30px;
+    border-radius: 15px;
 }
 
-.wineName {
+.wineName, .wineYear, .wineType {
     font-size: 20px;
     color: black;
     text-align: center;
-} 
+    /* max-width: 110px; */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.cellarLowerInfo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+}
