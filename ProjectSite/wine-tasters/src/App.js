@@ -1,11 +1,16 @@
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './Navbar.js';
+import CellarCard from './CellarCard.js';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
+        <Navbar />
         <img src={logo} className="App-logo" alt="logo" />
+        <CellarCard />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -21,5 +26,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;

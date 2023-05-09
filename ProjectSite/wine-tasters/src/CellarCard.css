@@ -1,0 +1,40 @@
+.cellarCard {
+    text-decoration: none;
+}
+
+.cardFrame {
+    background-color: beige;
+    min-height: 210px;
+    max-height: 210px;
+    min-width: 210px;
+    max-width: 210px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.photoFrame {
+    background-color: #7e7e7e;
+    width: 120px;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    margin-top: 45px;
+    min-height: 120px;
+}
+
+.winePhoto {
+    height: 80%;
+    justify-content: center;
+    min-width: 100px;
+}
+
+.wineName {
+    font-size: 20px;
+    color: black;
+    text-align: center;
+} 
