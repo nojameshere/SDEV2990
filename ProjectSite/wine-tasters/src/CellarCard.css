@@ -6,7 +6,7 @@
 }
 
 .cardFrame {
-    background-color: beige;
+    background-color: #fff;
     min-height: 210px;
     max-height: 210px;
     min-width: 210px;
@@ -49,4 +49,13 @@
     flex-direction: row;
     justify-content: center;
     gap: 20px;
+}
+
+.addIconFrame {
+}
+
+.addIcon {
+    height: 120px;
+    font-size: 120px;
+    color: black;
 }
