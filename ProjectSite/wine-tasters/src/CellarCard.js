@@ -10,7 +10,7 @@ const CellarCard = (itemValue) => {
                     <div className='wineName'>
                         <p>Temporary Wine Name</p>
                     </div>
-                    <img src={pictureIcon} alt='winePhoto' className='winePhoto' />
+                    <img src={pictureIcon} alt={winePhoto} className='winePhoto' />
                     <div className='cellarLowerInfo'>
                         <div className='wineType'>
                             <p>Red</p>

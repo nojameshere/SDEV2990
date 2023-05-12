@@ -14,10 +14,19 @@ function App() {
 
           </div>
           <div className='rightContent'>
-          <CellarCard />
+            <div className='cellarGrid'>
+              <CellarCard />
+              <CellarCard />
+              <CellarCard />
+              <CellarCard />
+              <CellarCard />
+              <CellarCard />
+              <CellarCard />
+              <CellarCard />
+              <CellarCard />
+            </div>
           </div>
         </div>
-        <CellarCard />
       </header>
     </div>
   );

@@ -1,6 +1,6 @@
 import { FaUser } from 'react-icons/fa';
 import './Navbar.css';
-var wineLogo = '/img/logoWhite.png';
+var wineLogo = '/img/logo.png';
 const Navbar = () => {
     return (
         <nav className="navbar">
