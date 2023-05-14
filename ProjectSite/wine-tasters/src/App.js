@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './App.css';
 import Navbar from './Navbar.js';
 import CellarCard from './CellarCard.js';
@@ -10,6 +10,11 @@ function App() {
   var handleSearch = () => {
     //do things for narrowing down the cellard cards.
   }
+  const [view, setView] = useState('reviews');
+
+  const handleToggle = () => {
+    setView(view === 'reviews' ? 'myCellar' : 'reviews');
+  };
   var dropdownItems1 = ['Thing1', 'Thing2', 'Thing3'];
 
   return (
