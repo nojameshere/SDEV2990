@@ -1,0 +1,62 @@
+.ratingCard{
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 15px;
+    height: 90px;
+    width: 100%;
+    margin-top: 32px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.leftRatingContent{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    height: 60px;
+    width: 60px;
+}
+.winePhoto{
+    height: 60px;
+    border-radius: 15px;
+}
+h1{
+    font-size: 20px;
+}
+h2{
+    font-size: 16px;
+}
+.wineTag{
+    display: inline;
+    background-color: #fff;
+    font-size: 12px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 2px 4px;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+
+
+.wineTitle {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding-left: 20px;
+  }
+  
+  .bottomWineTitle {
+    display: flex;
+    align-items: flex-start;
+  }
+  
+
+.addIcon {
+    height: 30px;
+}
+

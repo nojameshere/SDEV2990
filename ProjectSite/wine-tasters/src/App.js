@@ -5,6 +5,7 @@ import CellarCard from './CellarCard.js';
 import CellarCardAdd from './CellarCardAdd.js';
 import SearchBar from './SearchBar';
 import Dropdown from './Dropdown';
+import Rating from './Rating';
 
 function App() {
   var handleSearch = () => {
@@ -33,7 +34,8 @@ function App() {
             </div>
           </div>
           <div className='rightContent'>
-            <div className='cellarGrid'>
+          <Rating />
+            {/* <div className='cellarGrid'>
               <CellarCard />
               <CellarCard />
               <CellarCard />
@@ -44,7 +46,7 @@ function App() {
               <CellarCard />
               <CellarCard />
               <CellarCardAdd />
-            </div>
+            </div> */}
           </div>
         </div>
       </header>
