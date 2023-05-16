@@ -28,3 +28,17 @@
     height: 45px;
     color: black;
   }
+
+  .toggleButton {
+    border: none;
+    text-decoration: none;
+    margin: 10px;
+    width: 80px;
+    height: 25px;
+    border-radius: 15px;
+    background-color: #fff;
+  }
+
+  .toggleButton.active{
+    background-color: #eee;
+  }
