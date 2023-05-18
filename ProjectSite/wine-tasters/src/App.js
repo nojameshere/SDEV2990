@@ -3,11 +3,25 @@ import './App.css';
 import Navbar from './components/Navbar.js';
 import Cellar from './pages/Cellar.js';
 import WineList from './pages/WineList.js'
-import CellarCard from './components/CellarCard.js';
-import CellarCardAdd from './components/CellarCardAdd.js';
 import SearchBar from './components/SearchBar';
 import Dropdown from './components/Dropdown';
-import Rating from './components/Rating';
+import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
+
+// TODO: Replace the following with your app's Firebase project configuration
+// See: https://firebase.google.com/docs/web/learn-more#config-object
+const firebaseConfig = {
+  // ...
+  // The value of `databaseURL` depends on the location of the database
+  databaseURL: "https://winetastersanon-default-rtdb.firebaseio.com",
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+
+
+// Initialize Realtime Database and get a reference to the service
+const database = getDatabase(app);
 
 function App() {
   var handleSearch = () => {
