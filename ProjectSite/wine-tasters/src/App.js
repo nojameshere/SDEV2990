@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Reset.css';
 import './App.css';
 import Navbar from './components/Navbar.js';
 import Cellar from './pages/Cellar.js';
@@ -6,22 +7,39 @@ import WineList from './pages/WineList.js'
 import SearchBar from './components/SearchBar';
 import Dropdown from './components/Dropdown';
 import { initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
+import { getFirestore, collection, doc, setDoc, getDoc, query, where, getDocs, connectFirestoreEmulator } from "firebase/firestore";
 
 // TODO: Replace the following with your app's Firebase project configuration
-// See: https://firebase.google.com/docs/web/learn-more#config-object
+// See: https://support.google.com/firebase/answer/7015592
 const firebaseConfig = {
-  // ...
-  // The value of `databaseURL` depends on the location of the database
-  databaseURL: "https://winetastersanon-default-rtdb.firebaseio.com",
+  apiKey: `${process.env.REACT_APP_FIREBASE_API_KEY}`,
+  authDomain: `${process.env.REACT_APP_FIREBASE_AUTH_DOMAIN}`,
+  databaseURL: `${process.env.REACT_APP_DB_URL}`,
+  projectId: `${process.env.REACT_APP_PROJECT_ID}`,
+  storageBucket: `${process.env.REACT_APP_STORAGE_BUCKET}`,
+  messagingSenderId: `${process.env.REACT_APP_MESS_SEND_ID}`,
+  appId: `${process.env.REACT_APP_APP_ID}`
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 
 
-// Initialize Realtime Database and get a reference to the service
-const database = getDatabase(app);
+// Initialize Cloud Firestore and get a reference to the service
+const db = getFirestore(app);
+
+const wineDB = collection(db, "wine");
+
+// console.log(wineDB);s
+const q = query(wineDB, where('wineID', '==', 1));
+// console.log(q);
+const doShit = async () => {
+  const queryTry = await getDocs(q);
+  queryTry.forEach((doc) => {
+    console.log(doc.id, ' =>', doc.data());
+  });
+}
+doShit();
 
 function App() {
   var handleSearch = () => {

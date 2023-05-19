@@ -1,4 +1,4 @@
-.ratingCard{
+.ratingCard {
     display: flex;
     align-items: center;
     background-color: #fff;
@@ -10,7 +10,7 @@
     margin-right: 20px;
 }
 
-.leftRatingContent{
+.leftRatingContent {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -18,17 +18,31 @@
     height: 60px;
     width: 60px;
 }
-.winePhoto{
+
+.winePhotoBox {
+    display: flex;
+    justify-content: center;
+}
+
+.winePhotoRating {
     height: 60px;
+    width: 60px;
     border-radius: 15px;
+    margin-left: 20px;
+    ;
 }
-h1{
+
+h1 {
     font-size: 20px;
+    margin: 0;
 }
-h2{
+
+h2 {
     font-size: 16px;
+    margin: 0;
 }
-.wineTag{
+
+.wineTag {
     display: inline;
     background-color: #fff;
     font-size: 12px;
@@ -36,7 +50,7 @@ h2{
     border: 1px solid black;
     border-radius: 5px;
     padding: 2px 4px;
-    margin-left: 10px;
+    margin-left: 15px;
     cursor: pointer;
 }
 
@@ -45,16 +59,28 @@ h2{
 .wineTitle {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    text-align: center;
-    padding-left: 20px;
-  }
-  
-  .bottomWineTitle {
+    margin-left: 20px;
+}
+
+.wineName {}
+
+.bottomWineTitle {
     display: flex;
-    align-items: flex-start;
-  }
-  
+    justify-content: flex-end;
+}
+
+.wineYear {
+    display: flex;
+    flex: 1;
+    margin-left: 15px;
+}
+
+
+.addRating {
+    display: flex;
+    width: 30px;
+    margin-right: 20px;
+}
 
 .addIcon {
     height: 30px;
@@ -62,6 +88,15 @@ h2{
 }
 
 .wineInfo {
+    margin-left: 30px;
     flex-grow: 4;
     justify-content: flex-start;
+}
+
+.upperWineInfo {
+    text-align: left;
+}
+
+.lowerWineInfo {
+    display: flex;
 }

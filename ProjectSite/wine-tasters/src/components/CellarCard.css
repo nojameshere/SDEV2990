@@ -43,6 +43,7 @@
     text-align: center;
     text-overflow: ellipsis;
     white-space: nowrap;
+    margin: 10px;
 }
 .cellarLowerInfo {
     display: flex;

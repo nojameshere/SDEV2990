@@ -20,7 +20,7 @@ const Dropdown = ({ items, placeholder }) => {
       <button className="dropdown-toggle" >
         {selectedItem ? selectedItem : placeholder}
       </button>
-      <FiChevronDown className={`dropdown-icon ${isOpen ? 'rotate' : ''}`} />
+        <FiChevronDown className={`dropdown-icon ${isOpen ? 'rotate' : ''}`} />
       {isOpen && (
         <ul className="dropdown-menu">
           {items.map((item, index) => (

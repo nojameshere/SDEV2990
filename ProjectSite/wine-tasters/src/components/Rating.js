@@ -9,11 +9,11 @@ const Rating = () => {
     return (
         <div className='ratingCard'>
             <div className='leftRatingContent'>
-                <div className='winePhoto'>
-                    <img src={pictureIcon} alt={winePhoto} className='winePhoto' />
+                <div className='winePhotoBox'>
+                    <img src={pictureIcon} alt={winePhoto} className='winePhotoRating' />
                 </div>
             </div>
-            <div className='wineTitle'>
+            <div className='wineTitle cardContent'>
                 <div className='wineName'>
                     <h1>Temporary Wine Name</h1>
                 </div>
@@ -26,7 +26,7 @@ const Rating = () => {
                     </div>
                 </div>
             </div>
-            <div className='wineInfo'>
+            <div className='wineInfo cardContent'>
                 <div className='upperWineInfo'>
                     <h2>This is the description part of the wine.</h2>
                 </div>
@@ -46,9 +46,9 @@ const Rating = () => {
                     </div>
                 </div>
             </div>
-            <div className='addRating'>
+            <a href='' className='addRating'>
                 <FaPlus className='addIcon' />
-            </div>
+            </a>
         </div>
     )
     
