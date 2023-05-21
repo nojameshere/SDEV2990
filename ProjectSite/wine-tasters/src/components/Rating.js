@@ -5,7 +5,7 @@ var pictureIcon = '/img/picturePlaceholder.png';
 var winePhoto = '/img/tempWinePhoto.webp';
 
 
-const Rating = () => {
+const Rating = ({prop}) => {
     return (
         <div className='ratingCard'>
             <div className='leftRatingContent'>
@@ -15,20 +15,20 @@ const Rating = () => {
             </div>
             <div className='wineTitle cardContent'>
                 <div className='wineName'>
-                    <h1>Temporary Wine Name</h1>
+                    <h1>{prop.name}</h1>
                 </div>
                 <div className='bottomWineTitle'>
                     <div className='wineType'>
-                        <h2>Red</h2>
+                        <h2>{prop.type}</h2>
                     </div>
                     <div className='wineYear'>
-                        <h2>1999</h2>
+                        <h2>{prop.year}</h2>
                     </div>
                 </div>
             </div>
             <div className='wineInfo cardContent'>
                 <div className='upperWineInfo'>
-                    <h2>This is the description part of the wine.</h2>
+                    <h2>{prop.desc}</h2>
                 </div>
                 <div className='lowerWineInfo'>
                     <div className='wineRating'>

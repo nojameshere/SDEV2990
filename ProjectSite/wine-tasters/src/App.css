@@ -52,3 +52,19 @@ body{
   display: grid;
   grid-gap: 15px;
 }
+
+.content{
+  flex: 1;
+}
+
+.addWineButtonBox{
+  display: block;
+  padding: 32px;
+}
+.addWineButton{
+  display: flex;
+  justify-content: end;
+  height: 60px;
+  text-decoration: none;
+  color: black;
+}

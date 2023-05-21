@@ -29,17 +29,18 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 const wineDB = collection(db, "wine");
-
-// console.log(wineDB);s
-const q = query(wineDB, where('wineID', '==', 1));
-// console.log(q);
-const doShit = async () => {
+const q = query(wineDB, where('wineID', '>', 0));
+var wineArray = [];
+const pullWines = async () => {
+  wineArray = [];
   const queryTry = await getDocs(q);
   queryTry.forEach((doc) => {
-    console.log(doc.id, ' =>', doc.data());
+    var retrievedData = (doc.id, ' =>', doc.data());
+    wineArray.push(retrievedData);
   });
+  console.log(wineArray);
 }
-doShit();
+pullWines();
 
 function App() {
   var handleSearch = () => {
@@ -51,6 +52,7 @@ function App() {
 
   const togglePage = () => {
     setIsToggleOn(!isToggleOn);
+    pullWines();
   };
 
   return (
@@ -70,7 +72,7 @@ function App() {
             </div>
           </div>
           <div className='rightContent'>
-          {isToggleOn ? <Cellar /> : <WineList />}
+          {isToggleOn ? <Cellar /> : <WineList data={wineArray} />}
           </div>
         </div>
       </header>
