@@ -6,6 +6,7 @@ const WineList = ({data}) => {
     console.log(data)
     return (
         <div className='content'>
+
             <div className='contentUpper'>
                 {data.map((doc, index) => (
                     <Rating key={index} prop={doc} />

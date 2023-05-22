@@ -6,6 +6,8 @@ var winePhoto = '/img/tempWinePhoto.webp';
 
 
 const Rating = ({prop}) => {
+    console.log(prop);
+    console.log('fuck');
     return (
         <div className='ratingCard'>
             <div className='leftRatingContent'>
