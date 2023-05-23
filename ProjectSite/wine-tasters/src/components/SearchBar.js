@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaTimes } from 'react-icons/fa';
-import './SearchBar.css';
+import '../CSS/SearchBar.css';
 
 const SearchBar = ({ onSearch }) => {
   const [searchText, setSearchText] = useState('');

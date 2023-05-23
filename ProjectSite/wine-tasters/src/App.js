@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+
+import React, { useState, useEffect } from 'react';
 import './Reset.css';
 import './App.css';
 import Navbar from './components/Navbar.js';
 import Cellar from './pages/Cellar.js';
-import WineList from './pages/WineList.js'
+import WineList from './pages/WineList.js';
 import SearchBar from './components/SearchBar';
 import Dropdown from './components/Dropdown';
-import { initializeApp } from "firebase/app";
-import { getFirestore, collection, doc, setDoc, getDoc, query, where, getDocs, connectFirestoreEmulator } from "firebase/firestore";
+import { FaWineBottle } from 'react-icons/fa';
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, query, getDocs } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
-
-
 
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://support.google.com/firebase/answer/7015592
@@ -26,62 +26,61 @@ const firebaseConfig = {
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const auth = getAuth(app)
-
-// Initialize Cloud Firestore and get a reference to the service
-const db = getFirestore(app);
-
-const wineDB = collection(db, "wine");
-const q = query(wineDB, where('wineID', '>', 0));
-var wineArray = [];
-const pullWines = async () => {
-  wineArray = [];
-  const queryTry = await getDocs(q);
-  queryTry.forEach((doc) => {
-    var retrievedData = (doc.id, ' =>', doc.data());
-    wineArray.push(retrievedData);
-  });
-  console.log(wineArray);
-}
-pullWines();
+const auth = getAuth(app);
 
 function App() {
   var handleSearch = () => {
-    //do things for narrowing down the cellard cards.
-  }
+    // do things for narrowing down the cellar cards
+  };
   var dropdownItems1 = ['Thing1', 'Thing2', 'Thing3'];
+  var wineType = ['Red', 'White', 'Rosé', 'Sparkling', 'Dessert', 'Fortified', 'Other'];
+  var century = ['1200', '1300', '1400', '1500', '1600', '1700', '1800', '1900', '2000'];
+  var decade = ['00', '10', '20', '30', '40', '50', '60', '70', '80', '90'];
+  var ratings = [<FaWineBottle />,<div><FaWineBottle /><FaWineBottle /></div>, <div><FaWineBottle /><FaWineBottle /><FaWineBottle /></div>, '4', '5']
 
   const [isToggleOn, setIsToggleOn] = useState(false);
+  const [wineArray, setWineArray] = useState([]);
+  const db = getFirestore(app);
+  const wineDB = collection(db, 'wine');
+  
+  const fetchWines = async () => {
+    const q = query(wineDB);
+    const querySnapshot = await getDocs(q);
+    const retrievedWines = querySnapshot.docs.map((doc) => ({ id: doc.id, data: doc.data() }));
+    setWineArray(retrievedWines);
+  };
+
+  useEffect(() => {
+    fetchWines();
+  }, []);
 
   const togglePage = () => {
     setIsToggleOn(!isToggleOn);
-    pullWines();
   };
 
   return (
     <div className="App">
       <header className="App-header">
-      <Navbar onToggle={togglePage} activeButton={isToggleOn ? 1 : 2}/>
+        <Navbar onToggle={togglePage} activeButton={isToggleOn ? 1 : 2} />
 
         <div className='pageContent'>
           <div className='leftContent'>
             <SearchBar onSearch={handleSearch} />
             <h2>Filter results</h2>
             <div className='filterGrid'>
-              <Dropdown items={dropdownItems1} placeholder={'Things'} />
-              <Dropdown items={dropdownItems1} placeholder={'Things'} />
-              <Dropdown items={dropdownItems1} placeholder={'Things'} />
-              <Dropdown items={dropdownItems1} placeholder={'Things'} />
+              <Dropdown items={wineType} placeholder={'Wine Type'} />
+              <Dropdown items={century} placeholder={'Century'} />
+              <Dropdown items={decade} placeholder={'Decade'} />
+              <Dropdown items={ratings} placeholder={'Rating'} />
             </div>
           </div>
           <div className='rightContent'>
-          {isToggleOn ? <Cellar /> : <WineList data={wineArray} />}
+            {isToggleOn ? <Cellar /> : <WineList data={wineArray} db={db} onDataUpdate={fetchWines} />}
           </div>
         </div>
       </header>
     </div>
   );
 }
-
 
 export default App;

@@ -1,0 +1,14 @@
+.photoGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+  }
+  
+  .selected {
+    border: 2px solid blue;
+  }
+  
+img{
+    width: 90px;
+    height: 90px;
+}

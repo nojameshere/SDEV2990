@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FiChevronDown } from 'react-icons/fi'
-import './Dropdown.css';
+import '../CSS/Dropdown.css';
 
 const Dropdown = ({ items, placeholder }) => {
   const [isOpen, setIsOpen] = useState(false);

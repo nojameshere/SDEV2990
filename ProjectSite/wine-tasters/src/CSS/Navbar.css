@@ -26,6 +26,7 @@
     font-size: 24px;
     margin-right: 10px;
     height: 45px;
+    width: 45px;
     color: black;
   }
 
@@ -38,6 +39,7 @@
     border-radius: 5px;
     background-color: #fff;
     transition: border-color 0.3s ease-in-out;
+    font-size: 15px;
   }
 
   .toggleButton:hover{
@@ -46,4 +48,9 @@
 
   .toggleButton.active{
     background-color: #eee;
+  }
+  .navbar-icon-user{
+    height: 45px;
+    color: black;
+    cursor: pointer;
   }

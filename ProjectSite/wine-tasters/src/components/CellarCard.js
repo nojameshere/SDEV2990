@@ -1,4 +1,4 @@
-import './CellarCard.css';
+import '../CSS/CellarCard.css';
 var pictureIcon = '/img/picturePlaceholder.png';
 var winePhoto = '/img/tempWinePhoto.webp';
 

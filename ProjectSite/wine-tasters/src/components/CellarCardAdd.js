@@ -1,4 +1,4 @@
-import './CellarCard.css';
+import '../CSS/CellarCard.css';
 import { FaPlus } from 'react-icons/fa';
 
 

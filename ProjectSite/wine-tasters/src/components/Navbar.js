@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaUser } from 'react-icons/fa';
-import './Navbar.css';
+import '../CSS/Navbar.css';
 import UserMenu from './UserMenu.js';
 var wineLogo = '/img/logo.png';
 
@@ -52,7 +52,7 @@ const Navbar = ({ onToggle, activeButton }) => {
         </button>
       </div>
       <div className="navbar-right">
-        <FaUser className="navbar-icon" onClick={handleUserMenuClick} />
+        <FaUser className="navbar-icon-user" onClick={handleUserMenuClick} />
       </div>
       {userMenuOpen && (
         <div ref={userMenuRef} className='userOptions'>

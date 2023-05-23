@@ -1,0 +1,78 @@
+.addWineContent {
+    position: absolute;
+    display: flex;
+    background-color: #d8d8d8;
+    justify-content: center;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    border-radius: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-sizing: border-box;
+  }
+
+.addForm {
+    margin: 15px;
+}
+
+.photoSection {
+    display: flex;
+    justify-content: center;
+}
+
+.addWinePhoto {
+    display: flex;
+    width: 90px;
+    height: 90px;
+    margin: 5px;
+    border-radius: 15px;
+}
+
+.entryField {
+    border-radius: 15px;
+    padding: 5px;
+    margin: 5px;
+    width: 110px;
+}
+
+#wineName {
+    width: 350px;
+}
+
+.wineYearType {
+    display: flex;
+}
+
+.wineTypeDropdown {
+    border: none;
+    border-radius: 15px;
+    padding: 7px;
+    margin: 5px;
+    width: 110px;
+}
+
+.descBox {
+    display: flex;
+    width: 350px;
+    border-radius: 15px;
+    padding: 5px;
+    border: none;
+    margin: 5px;
+}
+
+.newWineButton {
+    border: 1px solid transparent;
+    text-decoration: none;
+    margin: 5px;
+    width: 80px;
+    height: 25px;
+    border-radius: 5px;
+    background-color: #fff;
+    transition: border-color 0.3s ease-in-out;
+    font-size: 15px;
+}
+
+.newWineButton:hover {
+    border-color: #d9d9d9;
+}
