@@ -33,7 +33,6 @@ const WineList = ({ data, db, onDataUpdate }) => {
   return (
     <div className='content'>
       <div className='contentUpper'>
-        <h1> </h1>
         {data.map((doc, index) => (
           <Rating key={index} prop={doc} />
         ))}

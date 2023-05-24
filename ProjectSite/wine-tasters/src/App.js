@@ -11,6 +11,7 @@ import { FaWineBottle } from 'react-icons/fa';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, query, getDocs } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
+import Login from './pages/Login';
 
 // TODO: Replace the following with your app's Firebase project configuration
 // See: https://support.google.com/firebase/answer/7015592
@@ -32,7 +33,19 @@ function App() {
   var handleSearch = () => {
     // do things for narrowing down the cellar cards
   };
-  var dropdownItems1 = ['Thing1', 'Thing2', 'Thing3'];
+
+var isAuthenticated = () => {
+  //see if local storage has an item called 'authenticationToken'
+  //see if not null and > 0 just to be safe
+
+  //if exists, return true
+  if(localStorage.getItem('accessToken') !== null){
+    return true;
+  }
+  //if not exist, return false
+  return false;
+}
+
   var wineType = ['Red', 'White', 'Rosé', 'Sparkling', 'Dessert', 'Fortified', 'Other'];
   var century = ['1200', '1300', '1400', '1500', '1600', '1700', '1800', '1900', '2000'];
   var decade = ['00', '10', '20', '30', '40', '50', '60', '70', '80', '90'];
@@ -58,29 +71,37 @@ function App() {
     setIsToggleOn(!isToggleOn);
   };
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <Navbar onToggle={togglePage} activeButton={isToggleOn ? 1 : 2} />
-
-        <div className='pageContent'>
-          <div className='leftContent'>
-            <SearchBar onSearch={handleSearch} />
-            <h2>Filter results</h2>
-            <div className='filterGrid'>
-              <Dropdown items={wineType} placeholder={'Wine Type'} />
-              <Dropdown items={century} placeholder={'Century'} />
-              <Dropdown items={decade} placeholder={'Decade'} />
-              <Dropdown items={ratings} placeholder={'Rating'} />
+  if (isAuthenticated()) {
+    return (
+      <div className="App">
+        <header className="App-header">
+          <Navbar onToggle={togglePage} activeButton={isToggleOn ? 1 : 2} />
+  
+          <div className='pageContent'>
+            <div className='leftContent'>
+              <SearchBar onSearch={handleSearch} />
+              <h2>Filter results</h2>
+              <div className='filterGrid'>
+                <Dropdown items={wineType} placeholder={'Wine Type'} />
+                <Dropdown items={century} placeholder={'Century'} />
+                <Dropdown items={decade} placeholder={'Decade'} />
+                <Dropdown items={ratings} placeholder={'Rating'} />
+              </div>
+            </div>
+            <div className='rightContent'>
+              {isToggleOn ? <Cellar /> : <WineList data={wineArray} db={db} onDataUpdate={fetchWines} />}
             </div>
           </div>
-          <div className='rightContent'>
-            {isToggleOn ? <Cellar /> : <WineList data={wineArray} db={db} onDataUpdate={fetchWines} />}
-          </div>
-        </div>
-      </header>
-    </div>
-  );
+        </header>
+      </div>
+    );
+  }
+  else {
+    return(
+      <Login />
+    )
+  }
+  
 }
 
 export default App;
