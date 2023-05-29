@@ -45,16 +45,16 @@ const Login = () => {
         
     }
     return (
-        <div>
+        <div className='loginContent'>
             {/* <label>
                 <input type='text' placeholder='username' className='entryField' required />
             </label> */}
             {errorMessage.length > 0 ? <Alert message={errorMessage} /> : null}
             <label>
-                <input type='text' placeholder='email@mail.com' className='entryField' id='email' required />
+                <input type='text' placeholder='email@mail.com' className='loginEntryField' id='email' required autoComplete='off' />
             </label>
             <label>
-                <input type='text' placeholder='password' className='entryField password' id='password' required />
+                <input type='password' placeholder='password' className='loginEntryField password' id='password' required autoComplete='off' />
             </label>
             <button onClick={handleLogin}>
                 Login
