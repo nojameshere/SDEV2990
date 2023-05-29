@@ -89,7 +89,7 @@ var isAuthenticated = () => {
               </div>
             </div>
             <div className='rightContent'>
-              {isToggleOn ? <Cellar db={db} /> : <WineList data={wineArray} db={db} onDataUpdate={fetchWines} />}
+              {isToggleOn ? <Cellar wineData={wineArray} db={db} /> : <WineList data={wineArray} db={db} onDataUpdate={fetchWines} />}
             </div>
           </div>
         </header>

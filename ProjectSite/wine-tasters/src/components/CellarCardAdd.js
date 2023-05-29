@@ -1,19 +1,25 @@
+import React, { useState } from 'react';
 import '../CSS/CellarCard.css';
 import { FaPlus } from 'react-icons/fa';
+import AddToCellar from './AddToCellar';
 
+const CellarCardAdd = ({ wineData, db }) => {
+    const [showAddToCellar, setShowAddToCellar] = useState(false);
 
-const CellarCard = (itemValue) => {
+    const handleClick = () => {
+        setShowAddToCellar(true);
+    };
+
     return (
-        <a href={itemValue} className='cellarCard'>
+        <div className='cellarCard' onClick={handleClick}>
             <div className='cardFrame'>
                 <div className='addIconFrame'>
                     <FaPlus className='addIcon' />
                 </div>
-                
             </div>
-        </a>
-    )
+            {showAddToCellar && <AddToCellar wineData={wineData} db={db} />}
+        </div>
+    );
+};
 
-}
-
-export default CellarCard;
+export default CellarCardAdd;

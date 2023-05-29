@@ -5,13 +5,13 @@ import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import PhotoSelector from './PhotoSelector';
 var pictureIcon = '/img/picturePlaceholder.png';
 
-const AddWine = ({ onClose }) => {
+const AddWine = ({ onClose, db }) => {
   const [selectedPhoto, setSelectedPhoto] = useState(null);
   const [isSelectorOpen, setIsSelectorOpen] = useState(false);
   
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const db = getFirestore();
+    // const db = getFirestore();
 
     const name = document.getElementById('wineName').value;
     const type = document.getElementById('wineTypeDropdown').value;
@@ -23,8 +23,6 @@ const AddWine = ({ onClose }) => {
     if (selectedPhoto < 0 || selectedPhoto > 15 || selectedPhoto === null) {
         photoValue = 99;
     }
-    //I can't get the alt image to work so I have the alt image named 
-    //'Wine99' and this will make it so that's the image used...
 
     const wineData = {
       name: name,
