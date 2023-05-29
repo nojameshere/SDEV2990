@@ -93,7 +93,7 @@ const AddWine = ({ onClose, db }) => {
           </label>
         </div>
         <label>
-          <textarea placeholder='Wine Description' className='descBox' id='wineDescription'></textarea>
+          <textarea rows={3} placeholder='Wine Description' className='descBox' id='wineDescription'></textarea>
         </label>
         <button type='submit' className='newWineButton'>
           <FaPlus /> Add

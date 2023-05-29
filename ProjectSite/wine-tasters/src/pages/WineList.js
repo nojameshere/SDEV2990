@@ -34,7 +34,7 @@ const WineList = ({ data, db, onDataUpdate }) => {
     <div className='content'>
       <div className='contentUpper'>
         {data.map((doc, index) => (
-          <Rating key={index} prop={doc} />
+          <Rating key={index} prop={doc} db={db} />
         ))}
       </div>
       <div className='addWineButtonBox'>
