@@ -49,7 +49,7 @@ var isAuthenticated = () => {
   var wineType = ['Red', 'White', 'Rosé', 'Sparkling', 'Dessert', 'Fortified', 'Other'];
   var century = ['1200', '1300', '1400', '1500', '1600', '1700', '1800', '1900', '2000'];
   var decade = ['00', '10', '20', '30', '40', '50', '60', '70', '80', '90'];
-  var ratings = [<FaWineBottle />,<div><FaWineBottle /><FaWineBottle /></div>, <div><FaWineBottle /><FaWineBottle /><FaWineBottle /></div>, '4', '5']
+  var ratings = [<FaWineBottle />,<div><FaWineBottle /><FaWineBottle /></div>, <div><FaWineBottle /><FaWineBottle /><FaWineBottle /></div>, <div><FaWineBottle /><FaWineBottle /><FaWineBottle /><FaWineBottle /></div>, <div><FaWineBottle /><FaWineBottle /><FaWineBottle /><FaWineBottle /><FaWineBottle /></div>]
 
   const [isToggleOn, setIsToggleOn] = useState(false);
   const [wineArray, setWineArray] = useState([]);
