@@ -22,16 +22,22 @@ const Cellar = ({ db }) => {
     }));
     setCellarArray(retrievedCellarItems);
   };
-
-  return (
+  if(cellarArray != null){
+    return (
+        <div className='cellarGrid'>
+          {cellarArray.map((doc, index) => (
+            
+            <CellarCard key={index} prop={doc} db={db} />
+          ))}
+          <CellarCardAdd db={db} />
+        </div>
+      );
+  }
+  return(
     <div className='cellarGrid'>
-      {cellarArray.map((doc, index) => (
-        
-        <CellarCard key={index} prop={doc} db={db} />
-      ))}
-      <CellarCardAdd db={db} />
+        <CellarCardAdd db={db} />
     </div>
-  );
+  )
 };
 
 export default Cellar;
