@@ -1,4 +1,4 @@
-.wineSelect{
+.addWineSelect{
     position: absolute;
     display: flex;
     background-color: #d8d8d8;
@@ -14,56 +14,65 @@
     box-sizing: border-box;
 }
 
-.selection {
-    position: relative;
-    width: 200px;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    user-select: none;
-    background-color: #fff;
-  }
-  
-  .dropdown-header {
-    padding: 10px;
-  }
-  
-  .selectedWine,
-  .placeholder {
-    color: #555;
-  }
-  
-  .dropdown-menu {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    max-height: 200px;
-    overflow-y: auto;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    z-index: 1;
-  }
-  
-  .wineItem {
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .wineItem.selected {
-    background-color: #f0f0f0;
-  }
-  
-  .addToCellarButton {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .addToCellarButton:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
-  }
+.addWineSelection {
+  position: relative;
+}
+
+.addWineDropdown-header {
+  padding: 10px;
+  background-color: #f2f2f2;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.addWinePlaceholder {
+  color: #999;
+}
+
+.addWineSelectedWine {
+  font-weight: bold;
+}
+
+.addWineDropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+  display: none;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-top: none;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.addWineDropdown-menu.open {
+  display: block;
+}
+
+.addWineItem {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.addWineItem.selected {
+  background-color: #f2f2f2;
+}
+
+.addWineToCellarButton {
+  margin-top: 10px;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  border-radius: 15px;
+}
+
+.addWineToCellarButton:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Add this style to open the dropdown on click */
+.addWineSelect.open .addWineDropdown-menu {
+  display: block;
+}
